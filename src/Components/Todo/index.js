@@ -8,9 +8,11 @@ function TodoList() {
     const inputRef = useRef();
 
     const handleAdd = () => {
-        dispatch(addJob(state.todoInput))
-        dispatch(setJob(''))
-        inputRef.current.focus()
+        if (state.todoInput !== '') {
+            dispatch(addJob(state.todoInput))
+            dispatch(setJob(''))
+            inputRef.current.focus()
+        }
     }
 
     return (

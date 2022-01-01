@@ -1,17 +1,32 @@
-import { SET_JOB, ADD_JOB } from "./constants";
+import { SET_JOB, ADD_JOB, EDIT_JOB, DELETE_JOB } from "./constants";
 
-const setJob = (payload) => {
+const setJob = (inputTodo) => {
     return {
-        payload,
+        inputTodo,
         type: SET_JOB
     }
 }
 
-const addJob = (payload) => {
+const addJob = (inputTodo) => {
     return {
-        payload,
+        inputTodo,
         type: ADD_JOB
     }
 }
 
-export { setJob, addJob }
+const editJob = (index, editTodo) => {
+    return {
+        index,
+        editTodo,
+        type: EDIT_JOB
+    }
+}
+
+const deleteJob = (index) => {
+    return {
+        index,
+        type: DELETE_JOB
+    }
+}
+
+export { setJob, addJob, editJob, deleteJob }
